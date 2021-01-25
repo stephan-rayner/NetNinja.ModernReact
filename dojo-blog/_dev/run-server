@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+function utils.cwd(){
+    echo "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+}
+
+CWD=$(utils.cwd)
+
+function main() {
+    clear;
+    echo "Starting Json-Server:"
+    json-server --watch ./data/db.json --port 8000 --delay 2000
+}
+
+pushd $CWD
+    main $@
+popd

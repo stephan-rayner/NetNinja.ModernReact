@@ -7,13 +7,12 @@ const BlogList = (props) => {
 }
 */
 
-const BlogList = ({ title, blogs, handleDelete }) => {
+const BlogList = ({ title, blogs }) => {
     const blogTemplateBuilder = (blog) => {
         return (
             <div className="blog-preview" key={blog.id}>
                 <h2>{blog.title}</h2>
                 <p>Written by {blog.author}</p>
-                <button onClick={(e) => handleDelete(blog.id)}>delete</button>
             </div>
         )
     }
